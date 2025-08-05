@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 @arabinho 🌟</title>
+    <link rel="icon" type="image/png" href="./grafiki/kanye.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <script>
+        // Animacja tytułu strony
+        document.addEventListener('DOMContentLoaded', () => {
+            const title = document.querySelector('title');
+            const text = "🌟 @arabinho 🌟";
+            let index = 0;
+
+            const animate = () => {
+                let newTitle = text.substring(index) + text.substring(0, index);
+                title.textContent = newTitle;
+                index = (index + 1) % text.length;
+            };
+
+            setInterval(animate, 250);
+        });
+
+        // Funkcja obsługująca przycisk dźwięku
+        function toggleSound() {
+            var video = document.getElementById("myVideo");
+            var btn = document.getElementById("sound-toggle-btn");
+
+            if (video.muted) {
+                video.muted = false;
+                btn.innerHTML = "🔊"; // Zmiana ikony na głośnik
+            } else {
+                video.muted = true;
+                btn.innerHTML = "🔇"; // Zmiana ikony na wyciszenie
+            }
+        }
+    </script>
+
+    <div class="background-container">
+        <video autoplay loop muted playsinline id="myVideo" class="background-video">
+             <source src="./grafiki/żaba.mp4" type="video/mp4">
+        </video>
+      
+    </div>
+
+    <button class="sound-toggle" id="sound-toggle-btn" onclick="toggleSound()">🔇</button>
+
+    <div class="content-container">
+        <div class="profile-card">
+            <img src="./grafiki/JaAvatar.jpg" alt="Awatar" class="avatar">
+            <h1>GOAT</h1>
+            <p>Discord: Arabinho,monster</p>
+            <div class="social-links">
+                <a href="https://discord.com/users/1297324968509702280" target="_blank">
+                    <img src="./grafiki/discord.png" alt="Discord" class="social-icon">
+                </a><a href="https://www.tiktok.com/@offalsainttrap" target="_blank">
+                    <img src="./grafiki/tiktok.png" alt="TikTok" class="social-icon">
+                </a><a href="https://instagram.com/makslinkowski_" target="_blank">
+                    <img src="./grafiki/instagram.png" alt="Instagram" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
